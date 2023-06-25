@@ -10,9 +10,7 @@ fn main() {
 
     match  args.len() {
         1 => println!("REPL"), //no script file provided, run REPL
-        2 => {
-            runner.file(Path::new(&args[1])).unwrap_or_default();
-        }, //Interpert specified script file
+        2 => runner.file(Path::new(&args[1])).unwrap_or_default(), //Interpert specified script file
         _ => print!("USAGE: rlox <scriptfile>") //use usage
     };
 }
